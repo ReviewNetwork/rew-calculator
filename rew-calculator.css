@@ -1,0 +1,290 @@
+.rc * {
+    font-family: sans-serif;
+}
+
+.rc {
+    overflow: hidden;
+    border: 1px solid #1c2a42;
+    display: inline-block;
+    border-radius: 6px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    background: #FFFFFF;
+    color: #1b2a42;
+}
+
+@media (min-width: 640px) {
+    .rc {
+        width: 340px;
+    }
+}
+
+.rc .rc-title {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    padding: 10px 0;
+    background: #1c2a42;
+    color: #ffffff;
+    position: relative;
+}
+
+.rc .rc-title__logo {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    margin-top: -2px;
+    width: 30px;
+    height: 23px;
+    background: url('https://review.network/static/assets/header/logo.png');
+    background-size: 30px 23px;
+}
+
+.rc .rc-current-stage {
+    padding: 20px;
+    background: #1b2a42;
+    display: none;
+}
+
+.rc .rc-current-stage.rc-current-stage--visible {
+    display: block;
+}
+
+.rc .rc-current-stage__name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #FFF;
+}
+
+.rc .rc-current-stage__dates {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #CCC;
+}
+
+.rc .rc-current-stage__min {
+    font-size: 16px;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+    color: #CCC;
+}
+
+.rc .rc-error {
+    color: red;
+    margin: 0 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+.rc .rc-error.rc-error--visible {
+    display: block;
+}
+
+.rc .rc-loader {
+    display: none;
+    opacity: 0.2;
+}
+
+.rc .rc-loader.rc-loader--visible {
+    display: block;
+}
+
+.rc .rc-input {
+    position: relative;
+    display: none;
+    padding: 20px;
+}
+
+.rc .rc-input.rc-input--visible {
+    display: flex;
+}
+
+.rc .rc-loader-container {
+    position: absolute;
+    right: 110px;
+    top: 10px;
+}
+
+.rc .rc-amount {
+    flex: 1;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    color: #444;
+}
+
+.rc .rc-amount:focus {
+    outline: none;
+    border-color: #1c2a42;
+}
+
+.rc .rc-currency-container {
+    position: relative;
+    background-color: #1c2a42;
+    width: auto;
+    display: inline-block;
+    max-width: 100%;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    margin-left: -20px;
+    border: 1px solid #1c2a42;
+}
+
+.rc .rc-currency:active,
+.rc .rc-currency:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.rc .rc-currency {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 100%;
+    color: #FFF;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.rc .rc-currency-container:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 8px;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #FFF;
+}
+
+.rc .rc-currency:focus {
+    outline: none;
+}
+
+.rc .rc-submit {
+    background: #22bb33;
+    color: #FFFFFF;
+    box-shadow: none;
+    border: 1px solid #22bb33;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 10px 40px;
+    width: auto;
+    display: none;
+}
+
+.rc .rc-submit:hover {
+    background: #2f8b3a;
+    border: 1px solid #2f8b3a;
+}
+
+.rc .rc-submit.rc-submit--visible {
+    display: inline-block;
+}
+
+.rc .rc-loader,
+.rc .rc-loader:before,
+.rc .rc-loader:after {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load 1.8s infinite ease-in-out;
+  animation: load 2.1s infinite ease-in-out;
+}
+.rc .rc-loader {
+  color: #1c2a42;
+  font-size: 10px;
+  margin: 0 auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+.rc .rc-loader:before,
+.rc .rc-loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.rc .rc-loader:before {
+  left: -8px;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.rc .rc-loader:after {
+  left: 8px;
+}
+
+@-webkit-keyframes load {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@keyframes load {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+.rc .rc-calculation {
+    padding: 20px;
+    display: none;
+}
+
+.rc .rc-calculation.rc-calculation--visible {
+    display: block;
+}
+
+.rc .rc-calculation__item {
+    margin-bottom: 20px;
+}
+
+.rc .rc-calculation__item:last-child {
+    margin-bottom: 0;
+}
+
+.rc .rc-calculation__item-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #777;
+}
+
+.rc .rc-calculation__item-value {
+    font-weight: bold;
+    font-size: 26px;
+}
