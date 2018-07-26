@@ -258,8 +258,8 @@ function throttle(callback, wait, context = this) {
                     let { applied_bonus: bonus, total_rew: totalRew } = data.content
                     let percentage = bonus && bonus.percentage
                     this.ui.$totalRew.innerHTML = totalRew.toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
                     })
                     this.ui.$bonus.innerHTML = percentage || '0'
                     this.ui.$calculation.classList.add('rc-calculation--visible')
