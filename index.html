@@ -19,7 +19,12 @@
 
     <script>
         document.body.onload = () => {
-            const rew = new RewCalculator('.calculator', {})
+            const rew = new RewCalculator('.calculator', {
+                onInit () {
+                    rew.setInvestment(10, 'ETH')
+                    rew.calculateTokens()
+                }
+            })
         }
     </script>
 </body>

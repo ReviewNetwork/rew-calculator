@@ -27,7 +27,7 @@ function throttle(callback, wait, context = this) {
 
 ;(() => {
     class RewCalculator {
-        constructor (elementOrSelector) {
+        constructor (elementOrSelector, { onInit = () => {} }) {
             if (!elementOrSelector) {
                 throw Error('Element or selector not passed')
             }
@@ -48,6 +48,7 @@ function throttle(callback, wait, context = this) {
                 .then(() => this.loadCurrentStage())
                 .then(() => {
                     this.ui.$inputContainer.classList.add('rc-input--visible')
+                    onInit()
                 })
         }
 
@@ -287,6 +288,11 @@ function throttle(callback, wait, context = this) {
             }
 
             window.location = `${DEFAULT_SUBMIT_URL}?amount=${this.ui.$amount.value}&currency=${this.ui.$currency.value}`
+        }
+
+        setInvestment (amount, currency) {
+            this.ui.$amount.value = amount
+            this.ui.$currency.value = currency
         }
     }
 
